@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Movie
@@ -21,3 +21,8 @@ def movie(request):
         page = paginator.page(paginator.num_pages)
     
     return render(request, 'index.html', {'page': page})
+
+def movie_view(request, movie_url):
+    movie = get_object_or_404(Movie, url=movie_url)
+    return render(request, 'movie.html', {'movie': movie})
+

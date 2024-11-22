@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    {{ movie.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row contenedor">
+		<div class="col">
+			<h2 class="titulo">{{ movie.title }}</h2>
+			<div class="row projects justify-content-center">
+				<p> {{ movie.content|safe }} </p>
+				<br>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

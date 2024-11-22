@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}Blog fan Ghibli{% endblock title %}
+
 {% load static %}
 
 {% block slider %}
@@ -61,7 +63,7 @@
 							<div class="content-project col-12 col-lg-8 col-md-8">
 								<h5 class="title-project">{{ movie.title }}</h5>
 								<p>{{ movie.description }}</p>
-								<a href="#" class="btn link-project">Mas Información</a>
+								<a href="{% url 'movie_detail' movie.url %}" class="btn link-project">Mas Información</a>
 							</div>
 						{% endfor %}
 
